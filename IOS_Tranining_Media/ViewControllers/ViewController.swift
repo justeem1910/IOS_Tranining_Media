@@ -18,4 +18,8 @@ class ViewController: UIViewController {
         let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
         self.navigationController?.pushViewController(vc!, animated: true)
     }
+    @IBAction func TapOnBtnCamera(_ sender: Any){
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "CameraViewController") as? CameraViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }

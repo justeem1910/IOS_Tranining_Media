@@ -16,6 +16,7 @@
 		DBD15FA7287D35D000431B65 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD15FA6287D35D000431B65 /* MapViewController.swift */; };
 		DBD15FA9287EADB600431B65 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD15FA8287EADB600431B65 /* CustomPointAnnotation.swift */; };
 		DBD15FAD287ECB1600431B65 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD15FAC287ECB1600431B65 /* CameraViewController.swift */; };
+		DBD15FB02880048700431B65 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD15FAF2880048700431B65 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DBD15FA6287D35D000431B65 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DBD15FA8287EADB600431B65 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		DBD15FAC287ECB1600431B65 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		DBD15FAF2880048700431B65 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		DBD15F91287D309300431B65 /* IOS_Tranining_Media */ = {
 			isa = PBXGroup;
 			children = (
+				DBD15FAE2880047000431B65 /* Constants */,
 				DBD15FAB287EBB6200431B65 /* Extensions */,
 				DBD15FAA287EBB4800431B65 /* ViewControllers */,
 				DBD15F92287D309300431B65 /* AppDelegate.swift */,
@@ -90,6 +93,14 @@
 				DBD15FA8287EADB600431B65 /* CustomPointAnnotation.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DBD15FAE2880047000431B65 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DBD15FAF2880048700431B65 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 				DBD15FA9287EADB600431B65 /* CustomPointAnnotation.swift in Sources */,
 				DBD15F93287D309300431B65 /* AppDelegate.swift in Sources */,
 				DBD15F95287D309300431B65 /* SceneDelegate.swift in Sources */,
+				DBD15FB02880048700431B65 /* Constants.swift in Sources */,
 				DBD15FA7287D35D000431B65 /* MapViewController.swift in Sources */,
 				DBD15FAD287ECB1600431B65 /* CameraViewController.swift in Sources */,
 			);

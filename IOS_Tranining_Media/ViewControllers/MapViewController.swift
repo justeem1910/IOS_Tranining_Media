@@ -18,54 +18,58 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       setView()
-    }
-    func setView(){
-        locationManger.desiredAccuracy = kCLLocationAccuracyBest
-        locationManger.requestWhenInUseAuthorization()
-        locationManger.startUpdatingLocation()
-        
         mapView.delegate = self
         locationManger.delegate = self
+        setView()
+    }
+   
+    func setView(){
+        if CLLocationManager.locationServicesEnabled() {
+            locationManger.desiredAccuracy = kCLLocationAccuracyBest
+            locationManger.requestWhenInUseAuthorization()
+            locationManger.startUpdatingLocation()
+        }
     }
 
     private func addCustomPin(location: CLLocation){
         coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        if CLLocationManager.authorizationStatus() == .denied {
-            showSettingAlert(message: "Vao setting de cap quyen")
-        } else {
-            let pin = CustomPointAnnotation()
-            pin.coordinate = coordinate
-            pin.title = "nha 1"
-            pin.image = "car"
-            mapView.addAnnotation(pin)
-            
-            let pin2 = CustomPointAnnotation()
-            pin2.coordinate = coordinate2
-            pin2.title = "Benh vien 2"
-            pin2.image = "tree"
-            mapView.addAnnotation(pin2)
-            
-            let pin3 = CustomPointAnnotation()
-            pin3.coordinate = coordinate3
-            pin3.title = "Bach Khoa"
-            pin3.image = "saucer"
-            mapView.addAnnotation(pin3)
-        }
+        let pin = CustomPointAnnotation()
+        pin.coordinate = coordinate
+        pin.title = "nha 1"
+        pin.image = "car"
+        mapView.addAnnotation(pin)
+        
+        let pin2 = CustomPointAnnotation()
+        pin2.coordinate = coordinate2
+        pin2.title = "Benh vien 2"
+        pin2.image = "tree"
+        mapView.addAnnotation(pin2)
+        
+        let pin3 = CustomPointAnnotation()
+        pin3.coordinate = coordinate3
+        pin3.title = "Bach Khoa"
+        pin3.image = "saucer"
+        mapView.addAnnotation(pin3)
         mapView.setRegion(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)), animated: true)
+        
     }
-    
+
 }
 //MARK: EXTENSION CLLOCATIONMANAGERDELEGATE
 extension MapViewController:CLLocationManagerDelegate{
+
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if CLLocationManager.authorizationStatus() == .denied{
+            self.showSettingAlert(message: "aaaaaa")
+        } else {
+            mapView.showsUserLocation = true
+        }
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             manager.stopUpdatingLocation()
             addCustomPin(location: location)
         }
-        
-        
     }
 }
 //MARK: EXTENSION MKMAPVIEWDELEGATE
